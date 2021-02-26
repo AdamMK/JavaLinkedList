@@ -1,6 +1,8 @@
 package linkedList;
 
-public class LinkedList {
+import java.util.LinkedList;
+
+public class LinkedLists {
 
     //properties
     Node head;
@@ -12,7 +14,7 @@ public class LinkedList {
 //        count = 0;
 //    }
 
-    public LinkedList(Node newHead) {
+    public LinkedLists(Node newHead) {
         head = newHead;
         count = 1;
     }
@@ -42,10 +44,30 @@ public class LinkedList {
     }
 
     //size
-    public int size
+    public int size() {
+        return count;
+    }
+
+    public boolean isEmpty() {
+        return head == null;
+    }
+
+    public void remove() {
+        //remove from back of the list
+        Node current = head;
+        while(current.getNext().getNext() != null) {
+            current = current.getNext();
+        }
+        current.setNext(null);
+        count--;
+    }
 
     public static void main(String[] args) {
-
+        LinkedList<String> linkedList = new LinkedList();
+        linkedList.add("Adam");
+        System.out.println(linkedList);
+        linkedList.add("Greg");
+        System.out.println(linkedList);
     }
 
 
